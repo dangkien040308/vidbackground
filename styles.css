@@ -1,0 +1,185 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inter&family=Lobster&family=Pacifico&family=Roboto&display=swap');
+
+
+html,body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+.header {
+    display: grid;
+    grid-template-columns: 20% 75%;
+    z-index: 999;
+    position: relative;
+    top : 0 ;
+    left : 0 ;
+    color: #fff;
+}
+.header .logo {
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.header .logo:hover {
+    color:  #fc4a1a;
+}
+.header .nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.header .nav .nav-item {
+    margin-right: 20px;
+    padding: 10px;
+    font-weight: 600;
+    position: relative;
+}
+.header .nav .nav-item::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left : 0 ;
+    height: 5px ;
+    background-image: linear-gradient(45deg ,#fc466b,#3f5efb);
+    border-radius: 5px;
+}
+.header .nav .nav-item:hover::before {
+    animation: show 0.3s ease-in-out 1 forwards;
+}
+@keyframes show {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+.header .nav .nav-item a {
+    text-decoration: none;
+    color: #fff;
+}
+.home {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 56px);
+}
+.home .vid {
+    z-index: 0;
+    width: 100%;
+    height: calc(100% + 56px);
+    object-fit: cover;
+    position: absolute;
+    top : 0 ;
+    left : 0 ;
+    margin-top: -56px;
+    filter: brightness(0.5)
+}
+.home .content {
+    color: #fff;
+    z-index: 999;
+    width: 70%;
+    margin-top: -10px ;
+    display: none;
+    padding: 20px;
+}
+.home .content.active {
+    display: block;
+}
+.home .content h1 {
+    font-size: 4em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 75px;
+    margin-bottom: 20px;
+}
+.home .content span {
+    font-size: 2em;
+    font-weight: 600;
+}
+.home .content p {
+    margin-bottom: 40px;
+    width: 90%;
+    background-color: rgba(0,0,0,0.4);
+    padding: 15px;
+    border-radius: 10px;
+}
+.home .content a {
+    padding: 10px 25px;
+    border-radius: 2px;
+    text-decoration: none;
+    background-color: #fff;
+    color: black;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.home .content a:hover {
+    opacity: 0.5;
+}
+.home .media {
+    z-index: 999;
+    position: absolute;
+    top : 50% ;
+    right : 0 ;
+    display: flex;
+    align-items : center ;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateY(-50%);
+}
+.home .media a {
+    padding: 10px;
+    margin: 15px;
+    transition: 0.5s;
+}
+.home .media a i {
+    font-size: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 99px;
+    color: #fff;
+}
+.home .media a:hover {
+    transform: scale(1.2);
+    opacity: 0.5;
+}
+.slider-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    position: relative;
+    transform: translateY(15px);
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+.slider-nav .btn {
+    width: 60px;
+    height: 15px;
+    border: 2px solid #5523df;
+    background-color: transparent;
+    margin-left: 50px;
+}
+.slider-nav .btn.active {
+    background-image: linear-gradient(45deg , #ee6bbe,  #3c93e9);
+}
+.slider-nav .btn:hover {
+    background-image: linear-gradient(45deg , #ee6bbe,  #3c93e9);
+}
+.vid {
+   clip-path: circle(0% at 0 50%);
+   position: absolute;
+   width: 100%;
+}
+.vid.active{
+    clip-path: circle(150% at 0 52%);
+    transition-property: clip-path;
+    transition: .5s ease-in-out ;
+}
